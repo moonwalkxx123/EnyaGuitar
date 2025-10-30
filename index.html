@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sell Me - Enya EGA X1 Pro Guitar</title>
+    <script src="/_sdk/element_sdk.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        box-sizing: border-box;
+      }
+
+      .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+
+      .card-shadow {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .price-strike {
+        position: relative;
+      }
+
+      .price-strike::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 2px;
+        background: #ef4444;
+        transform: rotate(-5deg);
+      }
+
+      .pulse-animation {
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+    </style>
+    <style>
+      @view-transition {
+        navigation: auto;
+      }
+    </style>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  </head>
+  <body class="min-h-full gradient-bg font-sans">
+    <main class="container mx-auto px-4 py-8">
+      <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <header class="text-center mb-12">
+          <h1
+            id="main-title"
+            class="text-5xl font-bold text-white mb-4 tracking-tight"
+          >
+            For Sale
+          </h1>
+          <div class="w-24 h-1 bg-white mx-auto rounded-full opacity-80"></div>
+        </header>
+        <!-- Main Content Card -->
+        <div class="bg-white rounded-3xl card-shadow overflow-hidden">
+          <!-- Video and Guitar Section -->
+          <div class="bg-gray-50 p-8">
+            <!-- Video Section -->
+            <div class="mb-8">
+              <h3 class="text-2xl font-bold text-gray-800 text-center mb-6">
+                Guitar Presentation
+              </h3>
+              <div class="max-w-2xl mx-auto">
+                <div
+                  class="relative bg-gray-800 rounded-xl overflow-hidden"
+                  style="aspect-ratio: 16/9"
+                >
+                  <!-- Video Placeholder -->
+                  <div
+                    class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-700 to-gray-900"
+                  >
+                    <div class="text-center text-white">
+                      <div class="mb-4">
+                        <svg
+                          width="80"
+                          height="80"
+                          viewbox="0 0 24 24"
+                          fill="currentColor"
+                          class="mx-auto opacity-60"
+                        >
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                      <p class="text-lg font-semibold mb-2">
+                        Guitar Demo Video
+                      </p>
+                      <p class="text-sm text-gray-300">
+                        Sound quality demonstration
+                      </p>
+                      <p class="text-xs text-gray-400 mt-2">
+                        Click to play presentation
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Play button overlay -->
+                  <button
+                    class="absolute inset-0 w-full h-full flex items-center justify-center group cursor-pointer"
+                    onclick="playVideoDemo()"
+                  >
+                    <div
+                      class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center group-hover:bg-opacity-30 transition-all duration-300 group-hover:scale-110"
+                    >
+                      <svg
+                        width="32"
+                        height="32"
+                        viewbox="0 0 24 24"
+                        fill="white"
+                        class="ml-1"
+                      >
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Guitar Illustration -->
+            <div class="text-center">
+              <div class="inline-block">
+                <!-- Guitar SVG -->
+                <img src="img/Enya Guitar.webp" alt="Enya Guitar" />
+              </div>
+            </div>
+          </div>
+          <!-- Product Details -->
+          <div class="p-8">
+            <div class="text-center mb-8">
+              <h2
+                id="guitar-model"
+                class="text-3xl font-bold text-gray-800 mb-2"
+              >
+                Enya EGA X1 Pro
+              </h2>
+              <p class="text-gray-600 text-lg">Premium Acoustic Guitar</p>
+            </div>
+            <!-- Features Grid -->
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+              <div class="bg-gray-50 rounded-xl p-6">
+                <h3 class="font-semibold text-gray-800 mb-3 flex items-center">
+                  🎵 Sound Quality
+                </h3>
+                <p class="text-gray-600">
+                  Exceptional tone with rich, warm acoustics. Perfect balance of
+                  clarity and depth for both fingerpicking and strumming.
+                </p>
+              </div>
+              <div class="bg-gray-50 rounded-xl p-6">
+                <h3 class="font-semibold text-gray-800 mb-3 flex items-center">
+                  ⭐ Premium Features
+                </h3>
+                <p class="text-gray-600">
+                  Professional-grade construction with premium tonewoods, smooth
+                  playability, and stunning visual appeal.
+                </p>
+              </div>
+            </div>
+            <!-- Pricing Section -->
+            <div class="text-center mb-8">
+              <div
+                class="bg-gradient-to-r from-red-50 to-green-50 rounded-2xl p-6 inline-block"
+              >
+                <p class="text-gray-600 mb-2">Original Price</p>
+                <p
+                  id="original-price"
+                  class="text-2xl font-bold text-gray-400 price-strike mb-3"
+                >
+                  ₱21,000
+                </p>
+                <p class="text-gray-800 font-semibold mb-2">Special Price</p>
+                <p
+                  id="sale-price"
+                  class="text-4xl font-bold text-green-600 pulse-animation"
+                >
+                  ₱18,000
+                </p>
+                <p class="text-sm text-green-700 mt-2 font-medium">
+                  Save ₱3,000!
+                </p>
+              </div>
+            </div>
+            <!-- Contact Section -->
+            <div class="bg-gray-900 rounded-2xl p-8 text-center text-white">
+              <h3 class="text-2xl font-bold mb-4">Interested?</h3>
+              <p id="contact-text" class="text-gray-300 mb-6">
+                Contact me for more details or to arrange a viewing
+              </p>
+              <div
+                class="flex flex-col md:flex-row items-center justify-center gap-8"
+              >
+                <!-- QR Code -->
+                <div class="text-center">
+                  <div class="bg-white p-4 rounded-xl inline-block mb-3">
+                    <!-- QR Code SVG -->
+                    <img src="img/qrCode.png" alt="QR Code" />
+                  </div>
+                  <p id="qr-label" class="text-sm text-gray-400">
+                    Scan for contact details
+                  </p>
+                </div>
+                <!-- Contact Info -->
+                <div class="text-left">
+                  <div class="flex items-center mb-3">
+                    <span class="text-2xl mr-3">📱</span>
+                    <span class="text-lg">0962-768-5827</span>
+                  </div>
+                  <div class="flex items-center mb-3">
+                    <span class="text-2xl mr-3">📧</span>
+                    <span class="text-lg">jzuno2022@gmail.com</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="text-2xl mr-3">🤝</span>
+                    <span class="text-lg">Meet up available</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      const defaultConfig = {
+        main_title: "For Sale",
+        guitar_model: "Enya EGA X1 Pro",
+        original_price: "₱21,000",
+        sale_price: "₱18,000",
+        contact_text: "Contact me for more details or to arrange a viewing",
+        qr_label: "Scan for contact details",
+      };
+
+      function playVideoDemo() {
+        // Create a modal overlay for video demo
+        const modal = document.createElement("div");
+        modal.className =
+          "fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50";
+        modal.innerHTML = `
+                <div class="bg-white rounded-xl p-6 max-w-2xl mx-4 relative">
+                    <button onclick="this.parentElement.parentElement.remove()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold">&times;</button>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">Guitar Demo Video</h3>
+                    <div class="bg-gray-800 rounded-lg p-8 text-center text-white mb-4" style="aspect-ratio: 16/9;">
+                        <div class="flex flex-col items-center justify-center h-full">
+                            <div class="text-6xl mb-4">🎸</div>
+                            <p class="text-lg font-semibold mb-2">Demo Video Placeholder</p>
+                            <p class="text-sm text-gray-300 mb-4">This would show the guitar's sound quality</p>
+                            <div class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg cursor-pointer transition-colors">
+                                ▶ Play Sound Demo
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 text-center">
+                        In a real implementation, this would contain an actual video showcasing the guitar's sound quality and features.
+                    </p>
+                </div>
+            `;
+        document.body.appendChild(modal);
+      }
+
+      async function onConfigChange(config) {
+        const mainTitle = document.getElementById("main-title");
+        const guitarModel = document.getElementById("guitar-model");
+        const originalPrice = document.getElementById("original-price");
+        const salePrice = document.getElementById("sale-price");
+        const contactText = document.getElementById("contact-text");
+        const qrLabel = document.getElementById("qr-label");
+
+        if (mainTitle)
+          mainTitle.textContent = config.main_title || defaultConfig.main_title;
+        if (guitarModel)
+          guitarModel.textContent =
+            config.guitar_model || defaultConfig.guitar_model;
+        if (originalPrice)
+          originalPrice.textContent =
+            config.original_price || defaultConfig.original_price;
+        if (salePrice)
+          salePrice.textContent = config.sale_price || defaultConfig.sale_price;
+        if (contactText)
+          contactText.textContent =
+            config.contact_text || defaultConfig.contact_text;
+        if (qrLabel)
+          qrLabel.textContent = config.qr_label || defaultConfig.qr_label;
+      }
+
+      function mapToCapabilities(config) {
+        return {
+          recolorables: [],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined,
+        };
+      }
+
+      function mapToEditPanelValues(config) {
+        return new Map([
+          ["main_title", config.main_title || defaultConfig.main_title],
+          ["guitar_model", config.guitar_model || defaultConfig.guitar_model],
+          [
+            "original_price",
+            config.original_price || defaultConfig.original_price,
+          ],
+          ["sale_price", config.sale_price || defaultConfig.sale_price],
+          ["contact_text", config.contact_text || defaultConfig.contact_text],
+          ["qr_label", config.qr_label || defaultConfig.qr_label],
+        ]);
+      }
+
+      // Initialize the Element SDK
+      if (window.elementSdk) {
+        window.elementSdk.init({
+          defaultConfig,
+          onConfigChange,
+          mapToCapabilities,
+          mapToEditPanelValues,
+        });
+      }
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'9967ebde83cebc55',t:'MTc2MTc5NTk0Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
